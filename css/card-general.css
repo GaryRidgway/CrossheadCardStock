@@ -7,6 +7,13 @@ body {
 	width: 800px;
 	min-height: 800px;
 	height: 1113px;
+	
+}
+
+.card-inner {
+    width: 800px;
+    min-height: 800px;
+    height: 1113px;
 	background-color: var(--white);
 	background-image: url("../assets/CREATURES - WHITE TEXT BLOCK TEXTURE.jpg");
 	background-size: cover;
@@ -15,7 +22,7 @@ body {
 
 .card-top {
 	width: var(--standard-size);
-	height: 730px;
+	height: 727px;
 	background-color: var(--green);
 	background-image: url("../assets/CREATURES - GREEN CREATURE TEXTURE.jpg");
 	background-size: cover;
@@ -55,7 +62,6 @@ body {
 	color: var(--red);
 	text-transform: uppercase;
 	position: absolute;
-    width: 100%;
     font-size: 78px;
     font-weight: 400;
     margin-top: 18px;
