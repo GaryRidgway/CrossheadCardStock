@@ -1,6 +1,5 @@
-function addCard() {
-	console.log('trigger');
-	$('#cardzone').append(
+function addCard(selector) {
+	selector.append(
 		'<div class="card">\
 			<div class="card-top">\
 				<img class="decorative-forest-background" src="assets/CREATURES - BACKGROUND ART BEASTS.png" alt="Decorative Forest Background">\
@@ -11,57 +10,10 @@ function addCard() {
 				</div>\
 				\
 				<div class="stat-bar">\
-					<div class="outer-stat-box">\
-				  		<div class="stat-box-title">\
-					    	<p>skl</p>\
-					    </div>\
-					  	<div class="inner-stat-box">\
-					    	<p>#</p>\
-					  	</div>\
-					</div>\
-					<div class="outer-stat-box">\
-				  		<div class="stat-box-title">\
-					    	<p>skl</p>\
-					    </div>\
-					  	<div class="inner-stat-box">\
-					    	<p>#</p>\
-					  	</div>\
-					</div>\
-					<div class="outer-stat-box">\
-				  		<div class="stat-box-title">\
-					    	<p>skl</p>\
-					    </div>\
-					  	<div class="inner-stat-box">\
-					    	<p>#</p>\
-					  	</div>\
-					</div>\
-					<div class="outer-stat-box">\
-				  		<div class="stat-box-title">\
-					    	<p>skl</p>\
-					    </div>\
-					  	<div class="inner-stat-box">\
-					    	<p>#</p>\
-					  	</div>\
-					</div>\
-					<div class="outer-stat-box">\
-				  		<div class="stat-box-title">\
-					    	<p>skl</p>\
-					    </div>\
-					  	<div class="inner-stat-box">\
-					    	<p>#</p>\
-					  	</div>\
-					</div>\
-					<div class="outer-stat-box">\
-				  		<div class="stat-box-title">\
-					    	<p>skl</p>\
-					    </div>\
-					  	<div class="inner-stat-box">\
-					    	<p>#</p>\
-					  	</div>\
-					</div>\
 				</div>\
 			</div>\
 			<div class="card-bottom"></div>\
 		</div>'
 	);
+	addStats(selector.find('.stat-bar'));
 }

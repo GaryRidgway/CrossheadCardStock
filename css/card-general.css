@@ -14,17 +14,18 @@ body {
 
 .card-top {
 	width: var(--standard-size);
-	height: 732px;
+	height: 730px;
 	background-color: var(--green);
 	background-image: url("../assets/CREATURES - GREEN CREATURE TEXTURE.jpg");
 	background-size: cover;
 	position: relative;
+	border-bottom: var(--border-size) solid var(--black);
 }
 
 .decorative-forest-background {
     opacity: 0.8;
-    width: 72%;
-    left: 14%;
+    width: 70%;
+    left: 15%;
     top: 16%;
     height: auto;
     position: absolute;
@@ -64,8 +65,10 @@ body {
 }
 
 .creature-specs {
+	color: var(--black);
+	letter-spacing: 1px;
 	position: absolute;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Oswald', sans-serif;
     left: 20%;
     background-color: var(--white);
     border: var(--border-size) solid var(--black);
