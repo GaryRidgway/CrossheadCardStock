@@ -1,0 +1,44 @@
+.stat-bar {
+      margin: 0px 15px;
+    position: absolute;
+    display: flex;
+    width: calc(100% - 30px);
+    justify-content: space-evenly;
+    bottom: -7%;
+}
+
+.outer-stat-box {
+  background-color: #eee5cb;
+  position: relative;
+  border: 3px solid #3b3933;
+  width: 100px;
+  height: 100px;
+  margin-top: 20px
+}
+
+.stat-box-title {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: -30px
+}
+
+.stat-box-title p {
+  background-color: #eee5cb;
+  position: relative;
+  border: 3px solid #3b3933;
+  text-transform: uppercase;
+  padding: 3px;
+  z-index: 500;
+  display: inline-block;
+}
+
+.inner-stat-box {
+  margin: 3px;
+  background-color: #eee5cb;
+  position: relative;
+  border: 3px solid #3b3933;
+  display: block;
+  height: calc(100% - 12px);
+}
