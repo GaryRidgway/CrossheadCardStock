@@ -12,10 +12,10 @@ function addStats(selector) {
 		selector.append(
 			'<div class="outer-stat-box" statno="' + i + '">\
 		  		<div class="stat-box-title">\
-			    	<p contenteditable="true">' + defaultStatName + '</p>\
+			    	<p spellcheck="false" contenteditable="true">' + defaultStatName + '</p>\
 			    </div>\
 			  	<div class="inner-stat-box">\
-			    	<p contenteditable="true">#</p>\
+			    	<p spellcheck="false" contenteditable="true">#</p>\
 			  	</div>\
 			</div>'
 		);
