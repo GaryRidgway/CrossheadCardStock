@@ -32,12 +32,16 @@
     position: absolute;
     height: 100%;
     width: auto;
+    display: flex;
+    justify-content: center;
 }
 
 .cr-card-text {
     top: 24px;
     position: absolute;
     color: var(--green);
+    display: flex;
+    flex-direction: column;
 }
 
 .cr-card-text p {
