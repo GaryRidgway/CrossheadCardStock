@@ -25,8 +25,8 @@ function saveState() {
 		
 }
 
-function loadSaveState(data = null) {
-	if (data == null) {
+function loadSaveState(data = 'CrossheadCardStockData') {
+	if (data == 'CrossheadCardStockData') {
 		try {
 			data = JSON.parse(localStorage.getItem('CrossheadCardStockData'));
 		}
@@ -35,22 +35,25 @@ function loadSaveState(data = null) {
 		  return;
 		}
 	}
-	let cardKeys = Object.keys(data);
-	cardKeys.forEach(function(cardid) {
-		let cardselector = $(".card[cardid='" + cardid +"']");
-		cardselector.find('.name-text').html(data[cardid].name);
-		cardselector.find('.creature-specs').html(data[cardid].specs);
-		cardselector.find('.outer-stat-box').each(function( index ) {
-			$(this).find('.stat-box-title p').html(data[cardid].stats[index][0]);
-			$(this).find('.inner-stat-box p').html(data[cardid].stats[index][1]);
+	if (data == {}) {
+		alert('Sorry, there is no data to load.');
+	  return;
+	}
+
+	else {
+		let cardKeys = Object.keys(data);
+		cardKeys.forEach(function(cardid) {
+			let cardselector = $(".card[cardid='" + cardid +"']");
+			cardselector.find('.name-text').html(data[cardid].name);
+			cardselector.find('.creature-specs').html(data[cardid].specs);
+			cardselector.find('.outer-stat-box').each(function( index ) {
+				$(this).find('.stat-box-title p').html(data[cardid].stats[index][0]);
+				$(this).find('.inner-stat-box p').html(data[cardid].stats[index][1]);
+			});
+			cardselector.find('.cr-left .cr-card-text').html(data[cardid].leftCR);
+			cardselector.find('.cr-right .cr-card-text').html(data[cardid].rightCR);
 		});
-		cardselector.find('.cr-left .cr-card-text').html(data[cardid].leftCR);
-		cardselector.find('.cr-right .cr-card-text').html(data[cardid].rightCR);
-
-
-	});
-
-	
+	}
 }
 
 $( document ).ready(function() {

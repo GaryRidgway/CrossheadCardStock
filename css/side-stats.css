@@ -17,8 +17,13 @@
 }
 
 .stat-wrapper {
+    pointer-events: none;
     margin-top: -10px;
 	height: var(--card-top-height);
+}
+
+.stat-selector {
+    pointer-events: all;
 }
 
 .add-stat+.iconlist {
