@@ -14,6 +14,8 @@ function addSideStats(selector) {
 
 // Pass this either the right or the left stat wrapper.
 function statSelector(selector, iconDict) {
+
+	// Create the stat selector button.
 	selector.append(
 		'<div class="stat-selector">\
 			<div class="add-stat">\
@@ -41,12 +43,13 @@ function statSelector(selector, iconDict) {
 		</div>\
 	';
 
+	// Place the iconlist and hide it at the start.
 	selector.find('.stat-selector').append(
 		iconlist
 	);
 	selector.find('.stat-selector .iconlist').hide();
-	
 
+	// This code checkst to make sure that the dialogue for the icons only appears if you clicked the stat selector icon.
 	selector.find('.add-stat').click(function() {
 
 		// Make sure there isnt an iconlist yet, break out if there is.
@@ -62,15 +65,15 @@ function statSelector(selector, iconDict) {
 		// If the user clicks anywhere outside the iconlist, destroy the iconlist.
 		$(document).click(function(e){
 
-		    // Check if click was triggered on or within #menu_content
+		    // Check if click was triggered on or within .iconlist or .add-stat, and if it wasn't, hide the iconlist.
 		    if( $(e.target).closest(selector.find('.iconlist')).length > 0 ||
 		    	$(e.target).closest(selector.find('.add-stat')).length > 0
 	    	) {
 		        return false;
 		    }
-
-		    selector.find('.stat-selector .iconlist').hide();
+		    else {
+		    	selector.find('.stat-selector .iconlist').hide();
+		    }
 		});
-		
 	});
 }
