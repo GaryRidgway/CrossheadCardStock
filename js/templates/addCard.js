@@ -11,14 +11,16 @@ function addCard(selector) {
 						<div class="cr-bar"></div>\
 					</div>\
 					<div class="stat-bar"></div>\
-					<div class="action-zone"></div>\
+					<div class="side-stats"></div>\
 				</div>\
 				<div class="card-bottom"></div>\
 			</div>\
 		</div>'
 	);
+	
 	addStats(selector.find('.stat-bar'));
 	addCRBar(selector.find('.cr-bar'));
+	addSideStats(selector.find('.side-stats'))
 
 	cardIDS++;
 }

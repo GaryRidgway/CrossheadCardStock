@@ -1,0 +1,28 @@
+.side-stats {
+	width: 100%;
+    height: 0px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+.add-stat {
+	border-radius: 50%;
+	background-color: #fff;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.stat-wrapper {
+    margin-top: -10px;
+	height: var(--card-top-height);
+}
+
+.add-stat+.iconlist {
+	background-color: white;
+	min-width: 100px;
+	min-height: 10px;
+}
