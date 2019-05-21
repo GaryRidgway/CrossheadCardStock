@@ -30,13 +30,16 @@ function loadSaveState(data = 'CrossheadCardStockData') {
 		try {
 			data = JSON.parse(localStorage.getItem('CrossheadCardStockData'));
 		}
+
+		// If anything goes wrong, there is no data to load.
 		catch(err) {
 		  alert('Sorry, there is no data to load.');
 		  return;
 		}
 	}
-	console.log(data);
-	if (data == {}) {
+
+	// Check if there is no data to load.
+	if (data == null) {
 		alert('Sorry, there is no data to load.');
 	  	return;
 	}
