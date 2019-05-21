@@ -35,9 +35,10 @@ function loadSaveState(data = 'CrossheadCardStockData') {
 		  return;
 		}
 	}
+	console.log(data);
 	if (data == {}) {
 		alert('Sorry, there is no data to load.');
-	  return;
+	  	return;
 	}
 
 	else {
