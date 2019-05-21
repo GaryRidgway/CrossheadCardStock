@@ -18,15 +18,17 @@
 
 .stat-wrapper {
     pointer-events: none;
-    margin-top: -10px;
-	height: var(--card-top-height);
+    margin-top: 135px;
+    height: calc(var(--card-top-height) - 10px - 135px);
 }
 
 .stat-selector {
     pointer-events: all;
+    position: relative;
 }
 
 .add-stat+.iconlist {
+    position: absolute;
 	min-width: 100px;
 	min-height: 10px;  
     display: flex;
