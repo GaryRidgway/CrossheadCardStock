@@ -30,7 +30,7 @@ function statSelector(selector, iconDict) {
 
 	Object.keys(iconDict).forEach(function(iconKey) {
 		iconlist = iconlist + '\
-			<div class="icon-select-' + iconKey + '">\
+			<div class="icon-select-' + iconKey + ' icon-select-icon-block">\
 				<p class="icon-select-title">' + iconKey + '</p>\
 				<img class="icon-select-icon" src="assets/' + iconDict[iconKey] + '" alt="' + iconKey + '">\
 			</div>\
@@ -41,18 +41,22 @@ function statSelector(selector, iconDict) {
 		</div>\
 	';
 
+	selector.find('.stat-selector').append(
+		iconlist
+	);
+	selector.find('.stat-selector .iconlist').hide();
+	
+
 	selector.find('.add-stat').click(function() {
 
 		// Make sure there isnt an iconlist yet, break out if there is.
-		if (selector.find('.iconlist').length) {
-			return;
+		if (selector.find('.iconlist').is(":visible")) {
+			// Do nothing.
 		}
 
 		// If there isn't, make one.
 		else {
-			selector.find('.stat-selector').append(
-				iconlist
-			);
+			selector.find('.stat-selector .iconlist').show();
 		}
 
 		// If the user clicks anywhere outside the iconlist, destroy the iconlist.
@@ -65,7 +69,7 @@ function statSelector(selector, iconDict) {
 		        return false;
 		    }
 
-		    selector.find('.iconlist').remove();
+		    selector.find('.stat-selector .iconlist').hide();
 		});
 		
 	});

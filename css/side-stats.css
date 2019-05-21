@@ -27,7 +27,25 @@
 }
 
 .add-stat+.iconlist {
-	background-color: white;
 	min-width: 100px;
-	min-height: 10px;
+	min-height: 10px;  
+    display: flex;
+    padding: 10px 40px;
+    background-color: rgba(51, 51, 51, 0.5);
+    border-radius: 500px;
+}
+
+.iconlist .icon-select-icon-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.iconlist .icon-select-title {
+    margin: 0;
+}
+
+.iconlist .icon-select-icon {
+    max-height: 50px;
+    width: auto;
 }
