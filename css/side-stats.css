@@ -17,8 +17,13 @@
 }
 
 .stat-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 100px;
     pointer-events: none;
-    margin-top: 135px;
+    margin: 0px 25px;
+    margin-top: 139px;
     height: calc(var(--card-top-height) - 10px - 135px);
 }
 
@@ -52,7 +57,6 @@
     font-family: 'Oswald', sans-serif;
     font-weight: 500;
     color: var(--black);
-    letter-spacing: 2px;
     text-transform: uppercase;
     font-size: 28px;
     line-height: 28px;
@@ -63,3 +67,72 @@
     max-height: 60px;
     width: auto;
 }
+
+
+/* Icons that are active in the left bar and already chosen. */
+.icon-select-icon-block-active {
+    pointer-events: all;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -6px;
+    position: relative;
+}
+
+.icon-select-icon-block-active:hover .remove-icon {
+    opacity: 1;
+    pointer-events: all;
+    right: -27px;
+}
+
+.icon-select-icon-block-active .remove-icon {
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: rgba(255, 255, 255, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    right: -45px;
+    top: 28px;
+    transition: all 0.15s ease-in-out;
+    transition-property: opacity, right;
+}
+
+.icon-select-icon-block-active .icon-select-title {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+    color: var(--black);
+    text-transform: uppercase;
+    font-size: 28px;
+    line-height: 28px;
+    margin: 0;
+    margin-bottom: -11px;
+}
+
+.icon-select-icon-block-active .icon-select-icon {
+    max-height: 115px;
+    width: auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

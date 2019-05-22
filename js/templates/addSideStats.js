@@ -6,8 +6,8 @@ function addSideStats(selector) {
 	);
 
 	statSelector(selector.find('.left-stat-wrapper'), {
-		hp: 'CREATURES - CORE - HP.png',
-		ac: 'CREATURES - CORE - AC.png'
+		'Hit Points': 'CREATURES - CORE - HP.png',
+		'Armor': 'CREATURES - CORE - AC.png'
 	});
 	// statSelector(selector.find('.right-stat-wrapper', {}));
 }
@@ -74,6 +74,22 @@ function statSelector(selector, iconDict) {
 		    else {
 		    	selector.find('.stat-selector .iconlist').hide();
 		    }
+		});
+	});
+
+	// Add clickable functionality to the icons available.
+	selector.find('.stat-selector .iconlist .icon-select-icon-block').click(function() {
+		let iconhtml = $(this)[0].innerHTML;
+		selector.find('.stat-selector').before(
+			'<div class="icon-select-icon-block-active">\
+				<div class="remove-icon">\
+					<i class="fas fa-minus"></i>\
+				</div>'
+				+ iconhtml +
+			'</div>'
+		);
+		selector.find('.icon-select-icon-block-active .remove-icon').click(function() {
+			$(this).parent().remove();
 		});
 	});
 }
