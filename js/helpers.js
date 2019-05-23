@@ -1,3 +1,13 @@
+// Can get the variables from the URL.
+function getUrlVars() {
+    var vars = {};
+    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+        vars[key] = value;
+    });
+    return vars;
+}
+
+// Can scale the card to what you want without leaving space around it.
 function cardScale(percentSize) {
 	$('.card').each(function() {
 		// Add the scaling to the card container.
