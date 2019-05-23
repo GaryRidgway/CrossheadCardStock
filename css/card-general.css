@@ -53,7 +53,9 @@ body {
     flex-direction: column;
     width: 100%;
     align-items: center;
-    top: 0;}
+    top: 0;
+    z-index: 600;
+}
 
 .name-plate .name-ribbon {
 	width: 100%;
