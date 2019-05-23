@@ -48,11 +48,12 @@ body {
 
 .name-plate {
 	padding-top: 8px;
-	position: relative;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-}
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    top: 0;}
 
 .name-plate .name-ribbon {
 	width: 100%;
