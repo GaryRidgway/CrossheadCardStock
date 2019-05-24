@@ -7,7 +7,6 @@ function addCreature(selector) {
 	);
 
 	$('#image-url').on('input', function() {
-		console.log('changed');
-		selector.find('.creature-image').attr('src', $(this).val());
+		selector.find('.creature-image').attr('src', stripHTML($(this).val()));
 	});
 }
