@@ -18,6 +18,7 @@ function addBottomTextbox(selector) {
 		['bold', 'italic', 'underline', 'strike'],
 		[{ 'list': 'ordered'}, { 'list': 'bullet' }],
 		[{ 'indent': '-1'}, { 'indent': '+1' }],
+		[{ 'align': [] }],
   		[{ 'script': 'sub'}, { 'script': 'super' }]
 	];
 
