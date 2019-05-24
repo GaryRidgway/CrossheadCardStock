@@ -1,6 +1,6 @@
 function addCard(selector) {
 	selector.append(
-		'<div class="card" cardID="card-' + cardIDS + '">\
+		'<div class="card" id="card-' + cardIDS + '" cardID="card-' + cardIDS + '">\
 			<div class="card-inner">\
 				<div class="card-top">\
 					<div class="name-plate">\
@@ -14,7 +14,9 @@ function addCard(selector) {
 					<div class="stat-bar"></div>\
 					<div class="side-stats"></div>\
 				</div>\
-				<div class="card-bottom"></div>\
+				<div class="card-bottom">\
+					<div class="bottom-textbox"></div>\
+				</div>\
 			</div>\
 		</div>'
 	);
@@ -23,6 +25,7 @@ function addCard(selector) {
 	addCRBar(selector.find('.cr-bar'));
 	addSideStats(selector.find('.side-stats'));
 	addCreature(selector.find('.creature-block'));
+	addBottomTextbox(selector.find('.bottom-textbox'));
 
 	cardIDS++;
 }

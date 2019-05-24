@@ -1,0 +1,11 @@
+.card-bottom {
+	padding-top: 41px;
+	height: calc(var(--whole-card-height) - var(--card-top-height) - var(--border-size) - 41px);
+}
+
+.card-bottom-wysiwyg {
+	font-family: 'Oswald', sans-serif;
+	font-size: 20px;
+	/* Calculated height minus padding minus proficiencies bar adjusted. */
+	height: calc(var(--whole-card-height) - var(--card-top-height) - var(--border-size) - 41px - 40px - 35px);
+}

@@ -9,13 +9,17 @@ function saveState() {
 		});
 		let leftCR  = $(this).find('.cr-left .cr-card-text').html();
 		let rightCR = $(this).find('.cr-right .cr-card-text').html();
+		let profs  = $(this).find('.creature-proficiencies-text').text();
+		let wysiwyg = quill.getContents();
 
 		var dict = {
 			name: name,
 			specs: specs,
 			stats: stats,
 			leftCR: leftCR,
-			rightCR: rightCR
+			rightCR: rightCR,
+			profs: profs,
+			wysiwyg: wysiwyg
 		};
 
 		savedContent[cardid] = dict;

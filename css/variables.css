@@ -2,14 +2,19 @@
 
   /* Variables */
   --border-size: 4px;
+  --border-size-thin: calc(var(--border-size) / 2);
   --standard-size: 800px;
   --card-top-height: calc(var(--standard-size) * 0.90875);
+  --whole-card-height: 1113px;
 
   /* Colors */
   --black: #3b3933;
   --white: #eee5cb;
   --red: #991b22;
   --green: #469c90;
+  --stark-white-transparent: rgba(255, 255, 255, 0.95);
+  --grey-bg-transparent: rgba(121, 121, 121, 0.42);
+  --grey-bg-transparent-light: rgba(121, 121, 121, 0.20);
 
   /* Material Shadows */
 

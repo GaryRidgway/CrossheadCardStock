@@ -44,4 +44,6 @@ function placeData(data, cardid) {
 	});
 	cardselector.find('.cr-left .cr-card-text').html(data[cardid].leftCR);
 	cardselector.find('.cr-right .cr-card-text').html(data[cardid].rightCR);
+	cardselector.find('.creature-proficiencies-text').html(data[cardid].profs);
+	quill.setContents(data[cardid].wysiwyg);
 }
