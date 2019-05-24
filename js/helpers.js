@@ -1,5 +1,5 @@
 // Can get the variables from the URL.
-function getUrlVars() {
+function getURLVars() {
     var vars = {};
     var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
         vars[key] = value;

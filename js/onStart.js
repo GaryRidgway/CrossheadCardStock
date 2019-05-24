@@ -7,4 +7,7 @@ $( document ).ready(function() {
 
     // Shrink em a bit.
     cardScale(0.8);
+
+    // Auto load if given argument.
+    autoLoad();
 });
