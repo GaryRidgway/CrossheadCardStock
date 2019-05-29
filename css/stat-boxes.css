@@ -1,5 +1,4 @@
 .stat-bar {
-  margin: 0px 38px;
   width: calc(100% - 76px);
   position: absolute;
   display: flex;

@@ -28,6 +28,8 @@ body {
 	background-size: cover;
 	position: relative;
 	border-bottom: var(--border-size) solid var(--black);
+    display: flex;
+    justify-content: center;
 }
 
 .decorative-forest-background {

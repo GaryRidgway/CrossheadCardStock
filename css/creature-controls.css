@@ -1,10 +1,25 @@
 .creature-controls {
-	width: 100%;
+	width: 50%;
     position: absolute;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    opacity: 0;
+    transition: var(--base-transition);
+    transition-property: opacity;
+}
+
+.creature-controls:hover {
+    opacity: 1;
+}
+
+.creature-controls:hover .rotate-creature {
+    pointer-events: all;
+}
+
+.rotate-creature {
+    pointer-events: none;
 }
 
 .rotate-creature .rs-bg-color {
