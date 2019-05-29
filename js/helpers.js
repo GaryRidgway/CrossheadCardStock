@@ -39,3 +39,8 @@ function stripHTML(html){
    var doc = new DOMParser().parseFromString(html, 'text/html');
    return doc.body.textContent || "";
 }
+
+// Rotate creature.
+function rotateCreatureImage(selector, deg) {
+		selector.find('.creature-image').css( "transform", 'rotate(' + deg + 'deg)');
+	}

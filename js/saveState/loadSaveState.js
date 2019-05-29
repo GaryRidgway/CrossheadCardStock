@@ -46,4 +46,6 @@ function placeData(data, cardid) {
 	cardselector.find('.cr-right .cr-card-text').html(data[cardid].rightCR);
 	cardselector.find('.creature-proficiencies-text').html(data[cardid].profs);
 	quill.setContents(data[cardid].wysiwyg);
+	cardselector.find('.rotate-creature').roundSlider("option", "value", data[cardid].creRot);
+	rotateCreatureImage(cardselector, data[cardid].creRot);
 }

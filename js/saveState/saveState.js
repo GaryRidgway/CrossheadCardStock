@@ -11,6 +11,7 @@ function saveState() {
 		let rightCR = $(this).find('.cr-right .cr-card-text').html();
 		let profs  = $(this).find('.creature-proficiencies-text').text();
 		let wysiwyg = quill.getContents();
+		let creRot = $(this).find('.rotate-creature').roundSlider("option", "value");
 
 		var dict = {
 			name: name,
@@ -19,7 +20,8 @@ function saveState() {
 			leftCR: leftCR,
 			rightCR: rightCR,
 			profs: profs,
-			wysiwyg: wysiwyg
+			wysiwyg: wysiwyg,
+			creRot: creRot
 		};
 
 		savedContent[cardid] = dict;

@@ -1,0 +1,73 @@
+.creature-controls {
+	width: 100%;
+    position: absolute;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rotate-creature .rs-bg-color {
+	background-color: transparent;
+}
+
+.rotate-creature .rs-path-color {
+	background-color: rgba(255, 255, 255, 0.3);
+	border: var(--border-size) solid var(--stark-white-transparent);
+    border-radius: 1000px;
+}
+
+.rotate-creature .rs-tooltip.edit,
+.rotate-creature .rs-tooltip.hover,
+.rotate-creature .rs-tooltip {
+    border: 1px solid var(--black-transparent);
+    color: var(--black);
+    transition: var(--base-transition);
+    transition-property: border-color;
+    min-width: 50px;
+}
+
+.rotate-creature .rs-tooltip.edit:hover {
+    border: 1px solid var(--black-transparent-hover);
+}
+
+.rotate-creature .rs-tooltip.edit:focus,
+.rotate-creature .rs-tooltip.hover {
+    border: 1px solid var(--black);
+}
+
+.rotate-creature .rs-handle:after  {
+    background-color: transparent;
+}
+
+.rotate-creature .rs-border {
+    border-color: transparent;
+    pointer-events: none;
+}
+
+.rotate-creature .rs-inner.rs-border:before {
+	background-color: var(--stark-white-transparent);
+	position: absolute;
+	content: 'rotation';
+	width: 100%;
+    text-align: center;
+    top: 23%;
+    padding: 3px 5px;
+    z-index: 11;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 400;
+    color: var(--black);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 18px;
+    line-height: 18px;
+}
+
+.rotate-creature .rs-handle  {
+    background-color: var(--black);
+    border: 2px solid var(--white);
+}
+
+.rotate-creature .rs-block  {
+    overflow: hidden;
+}

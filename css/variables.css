@@ -9,6 +9,8 @@
 
   /* Colors */
   --black: #3b3933;
+  --black-transparent: rgb(59, 57, 51, 0.5);
+  --black-transparent-hover: rgb(59, 57, 51, 0.8);
   --white: #eee5cb;
   --red: #991b22;
   --green: #469c90;
@@ -20,6 +22,7 @@
 
 
   /* Academic theme variables*/
+  --base-transition: all 0.15s ease-in-out;
 
 
 }
