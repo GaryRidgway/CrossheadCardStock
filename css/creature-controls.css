@@ -14,6 +14,8 @@
     opacity: 1;
 }
 
+
+/* Creature rotate controls. */
 .creature-controls:hover .rotate-creature {
     pointer-events: all;
 }
@@ -40,6 +42,7 @@
     transition: var(--base-transition);
     transition-property: border-color;
     min-width: 50px;
+    background-color: rgba(255, 255, 255, 0.8);
 }
 
 .rotate-creature .rs-tooltip.edit:hover {
