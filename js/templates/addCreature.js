@@ -5,6 +5,9 @@ function addCreature(selector) {
 		</div>\
 		<div class="creature-controls">\
 			<div class="rotate-creature"></div>\
+			<div class="slidecontainer">\
+			  <input type="range" min="-100" max="100" value="0" class="slider horizontal-position">\
+			</div>\
 		</div>\
 		'
 	);
@@ -13,6 +16,7 @@ function addCreature(selector) {
 		selector.find('.creature-image').attr('src', stripHTML($(this).val()));
 	});
 
+	// Creates the circle slider and it's behavior for the rotation of the creature image.
 	let circleSlider = selector.find('.rotate-creature');
 	circleSlider.roundSlider({
 	    min: 0,
@@ -28,5 +32,10 @@ function addCreature(selector) {
 	    change: function (e) {
 	        rotateCreatureImage(selector, e.value)
 	    }
+	});
+
+	// Creates the horizontal position slider behavior for the creature image.
+	selector.find('.horizontal-position').on('input', function() {
+		horzontalCreatureImagePosition(selector, $(this).val());
 	});
 }

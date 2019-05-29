@@ -1,0 +1,13 @@
+.slidecontainer {
+    width: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+}
+
+.slider {
+	position: relative;
+    top: 103px;
+    width: 180px;
+    margin: 0;
+}

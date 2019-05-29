@@ -42,5 +42,10 @@ function stripHTML(html){
 
 // Rotate creature.
 function rotateCreatureImage(selector, deg) {
-		selector.find('.creature-image').css( "transform", 'rotate(' + deg + 'deg)');
-	}
+	selector.find('.creature-image').css( "transform", 'rotate(' + deg + 'deg)');
+}
+
+// Horizontally position creature.
+function horzontalCreatureImagePosition(selector, modifier) {
+	selector.find('.creature').css( "transform", 'translate(' + modifier * 1.4 + 'px)');
+}
