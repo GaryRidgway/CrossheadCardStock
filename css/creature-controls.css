@@ -1,13 +1,14 @@
 .creature-controls {
 	width: 50%;
     position: absolute;
-    height: 100%;
+    height: 69%;
     display: flex;
     justify-content: center;
     align-items: center;
     opacity: 0;
     transition: var(--base-transition);
     transition-property: opacity;
+    bottom: 11%;
 }
 
 .creature-controls:hover {
@@ -83,7 +84,7 @@
 
 .rotate-creature .rs-handle  {
     background-color: var(--black);
-    border: 2px solid var(--white);
+    border: 2px solid #fff;
 }
 
 .rotate-creature .rs-block  {

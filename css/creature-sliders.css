@@ -6,8 +6,39 @@
 }
 
 .slider {
+	-webkit-appearance: none;  /* Override default CSS styles */
+	appearance: none;
+	width: 100%; /* Full-width */
+	height: var(--border-size); /* Specified height */
+	background: var(--stark-white-transparent);
+	outline: none; /* Remove outline */
 	position: relative;
     top: 103px;
     width: 180px;
     margin: 0;
+}
+
+/* The slider itself */
+.slider {
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */ 
+.slider::-webkit-slider-thumb {
+	-webkit-appearance: none; /* Override default look */
+	appearance: none;
+	height: 18px;
+	width: 18px;
+	background: var(--black); /* Green background */
+	cursor: move; /* Cursor on hover */
+	border-radius: 1000px;
+    border: 2px solid #fff;
+}
+
+.slider::-moz-range-thumb {
+	height: 18px;
+	width: 18px;
+	background: var(--black); /* Green background */
+	cursor: move; /* Cursor on hover */
+	border-radius: 1000px;
+	border: 2px solid #fff;
 }
