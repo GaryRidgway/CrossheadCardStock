@@ -24,7 +24,7 @@
 .creature-controls {
     pointer-events: none;
     position: relative;
-    width: 210px;
+    width: 310px;
     height: 340px;
     display: flex;
     padding-top: 14px;
@@ -32,6 +32,13 @@
     border: var(--border-size) solid var(--stark-white-transparent);
     border-radius: 27px;
     background-color: rgba(80, 80, 80, 0.49);
+}
+
+.rotate-creature {
+    left: 0;
+    padding: 14px;
+    top: 0;
+    position: absolute;
 }
 
 .rotate-creature .rs-bg-color {

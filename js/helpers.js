@@ -58,3 +58,10 @@ function sizeCreatureImage(selector, modifier) {
   selector.find('.slider-size-tooltip').val(modifier);
   selector.find('.creature-size-container').css( "transform", 'scale(' + modifier / 100 + ')');
 }
+
+//
+function verticalCreatureImagePosition(selector, modifier) {
+  selector.find('.vertical-position').val(modifier);
+  selector.find('.slider-vertical-tooltip').val(modifier);
+  selector.find('.creature-vertical-container').css( "transform", 'translateY(' + modifier * -3 + 'px)');
+}

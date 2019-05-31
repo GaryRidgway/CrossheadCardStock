@@ -19,7 +19,12 @@
     height: auto;
 }
 
-.creature-size-container {
+.creature .creature-size-container {
+    width: 100%;
+    height: 100%;
+}
+
+.creature .creature-vertical-container {
     width: 100%;
     height: 100%;
 }

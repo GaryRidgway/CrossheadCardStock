@@ -14,6 +14,7 @@ function saveState() {
 		let creRot = $(this).find('.rotate-creature').roundSlider("option", "value");
     let horiz = $(this).find('.horizontal-position').val();
     let size = $(this).find('.size-position').val();
+    let vert = $(this).find('.vertical-position').val();
 
 		var dict = {
 			name: name,
@@ -25,7 +26,8 @@ function saveState() {
 			wysiwyg: wysiwyg,
 			creRot: creRot,
       horiz: horiz,
-      size: size
+      size: size,
+      vert: vert
 		};
 
 		savedContent[cardid] = dict;
