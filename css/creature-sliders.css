@@ -67,7 +67,7 @@
     font-size: 18px;
     line-height: 18px;
     padding: 3px 5px;
-    padding-right: 18px;
+    padding-right: 85px;
 	background-color: var(--stark-white-transparent);
 	border-left: 14px solid transparent;
 }
@@ -92,7 +92,7 @@
 }
 
 .bottom-slider.size .size-position-title {
-    padding-right: 80px;
+    padding-right: 147px;
 }
 
 /* Styles for vertical slider */
@@ -108,6 +108,10 @@
     flex-direction: row-reverse;
     margin-top: 30px;
     margin-bottom: 0px;
+}
+
+.bottom-slider.vertical .vertical-position-title{
+    padding-right: 18px;
 }
 
 .bottom-slider.vertical .vertical-position-title:before {
