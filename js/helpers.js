@@ -47,5 +47,7 @@ function rotateCreatureImage(selector, deg) {
 
 // Horizontally position creature.
 function horzontalCreatureImagePosition(selector, modifier) {
+  selector.find('.horizontal-position').val(modifier);
+  selector.find('.slider-horizontal-tooltip').val(modifier);
 	selector.find('.creature').css( "transform", 'translate(' + modifier * 1.4 + 'px)');
 }

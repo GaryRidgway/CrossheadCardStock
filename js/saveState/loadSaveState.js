@@ -48,4 +48,6 @@ function placeData(data, cardid) {
 	quill.setContents(data[cardid].wysiwyg);
 	cardselector.find('.rotate-creature').roundSlider("option", "value", data[cardid].creRot);
 	rotateCreatureImage(cardselector, data[cardid].creRot);
+	cardselector.find('.horizontal-position').val(data[cardid].horiz);
+	horzontalCreatureImagePosition(cardselector, data[cardid].horiz)
 }

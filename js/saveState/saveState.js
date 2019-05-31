@@ -12,6 +12,7 @@ function saveState() {
 		let profs  = $(this).find('.creature-proficiencies-text').text();
 		let wysiwyg = quill.getContents();
 		let creRot = $(this).find('.rotate-creature').roundSlider("option", "value");
+    let horiz = $(this).find('.horizontal-position').val();
 
 		var dict = {
 			name: name,
@@ -21,14 +22,14 @@ function saveState() {
 			rightCR: rightCR,
 			profs: profs,
 			wysiwyg: wysiwyg,
-			creRot: creRot
+			creRot: creRot,
+      horiz: horiz
 		};
 
 		savedContent[cardid] = dict;
 
 		localStorage.setItem('CrossheadCardStockData', JSON.stringify(savedContent));
 	});
-		
 }
 
 $( document ).ready(function() {

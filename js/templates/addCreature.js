@@ -46,4 +46,7 @@ function addCreature(selector) {
 	selector.find('.horizontal-position').on('input', function() {
 		horzontalCreatureImagePosition(selector, $(this).val());
 	});
+	selector.find('.slider-horizontal-tooltip').on('input', function() {
+		horzontalCreatureImagePosition(selector, $(this).val());
+	});
 }
