@@ -1,5 +1,5 @@
 .creature-block {
-	height: 100%;
+	  height: 100%;
     position: absolute;
     width: 100%;
     display: flex;
@@ -7,14 +7,19 @@
 }
 
 .creature-block .creature {
-	width: 100%;
-	height: 100%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+  	width: 100%;
+  	height: 100%;
+  	display: flex;
+  	justify-content: center;
+  	align-items: center;
 }
 
 .creature-block .creature .creature-image {
-	width: 70%;
+    width: 70%;
     height: auto;
+}
+
+.creature-size-container {
+    width: 100%;
+    height: 100%;
 }

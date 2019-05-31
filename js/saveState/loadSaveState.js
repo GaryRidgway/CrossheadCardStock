@@ -50,4 +50,6 @@ function placeData(data, cardid) {
 	rotateCreatureImage(cardselector, data[cardid].creRot);
 	cardselector.find('.horizontal-position').val(data[cardid].horiz);
 	horzontalCreatureImagePosition(cardselector, data[cardid].horiz)
+	cardselector.find('.size-position').val(data[cardid].size);
+	sizeCreatureImage(cardselector, data[cardid].size)
 }

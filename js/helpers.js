@@ -51,3 +51,10 @@ function horzontalCreatureImagePosition(selector, modifier) {
   selector.find('.slider-horizontal-tooltip').val(modifier);
 	selector.find('.creature').css( "transform", 'translate(' + modifier * 1.4 + 'px)');
 }
+
+// Horizontally position creature.
+function sizeCreatureImage(selector, modifier) {
+  selector.find('.size-position').val(modifier);
+  selector.find('.slider-size-tooltip').val(modifier);
+  selector.find('.creature-size-container').css( "transform", 'scale(' + modifier / 100 + ')');
+}

@@ -41,7 +41,7 @@
 	border-radius: 1000px;
 	border: 2px solid #fff;
 }
-.horizontal {
+.bottom-slider {
 	position: absolute;
     top: 194px;
     width: 100%;
@@ -50,7 +50,7 @@
     flex-direction: column;
 }
 
-.horizontal-position-header {
+.slider-header {
     display: flex;
     justify-content: space-between;
     margin-bottom: 15px;
@@ -58,7 +58,7 @@
     align-items: center;
 }
 
-.horizontal-position-title {
+.slider-title {
     font-family: 'Oswald', sans-serif;
     font-weight: 400;
     color: var(--black);
@@ -72,7 +72,7 @@
 	border-left: 14px solid transparent;
 }
 
-.slider-horizontal-tooltip {
+.slider-tooltip {
 	width: 54px;
 	border: 1px solid var(--black-transparent);
     color: var(--black);
@@ -85,4 +85,26 @@
     font-size: 13px;
     margin-right: 14px;
 }
+
+.bottom-slider.size {
+    top: 260px;
+}
+
+.bottom-slider.size .size-position-title {
+    padding-right: 80px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
