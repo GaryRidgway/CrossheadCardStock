@@ -1,4 +1,4 @@
-.creature-controls {
+.creature-controls-container {
 	width: 50%;
     position: absolute;
     height: 69%;
@@ -11,18 +11,27 @@
     bottom: 11%;
 }
 
-.creature-controls:hover {
+.creature-controls-container:hover {
     opacity: 1;
 }
 
 
 /* Creature rotate controls. */
-.creature-controls:hover .rotate-creature {
+.creature-controls-container:hover .creature-controls {
     pointer-events: all;
 }
 
-.rotate-creature {
+.creature-controls {
     pointer-events: none;
+    position: relative;
+    width: 210px;
+    height: 340px;
+    display: flex;
+    padding-top: 14px;
+    justify-content: center;
+    border: var(--border-size) solid var(--stark-white-transparent);
+    border-radius: 27px;
+    background-color: rgba(80, 80, 80, 0.49);
 }
 
 .rotate-creature .rs-bg-color {
@@ -30,7 +39,7 @@
 }
 
 .rotate-creature .rs-path-color {
-	background-color: rgba(255, 255, 255, 0.3);
+	background-color: transparent;
 	border: var(--border-size) solid var(--stark-white-transparent);
     border-radius: 1000px;
 }
