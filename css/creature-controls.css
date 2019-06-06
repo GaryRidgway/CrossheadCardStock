@@ -64,11 +64,13 @@
 
 .rotate-creature .rs-tooltip.edit:hover {
     border: 1px solid var(--black-transparent-hover);
+    cursor: text;
 }
 
 .rotate-creature .rs-tooltip.edit:focus,
 .rotate-creature .rs-tooltip.hover {
     border: 1px solid var(--black);
+    cursor: text;
 }
 
 .rotate-creature .rs-handle:after  {
