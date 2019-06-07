@@ -10,7 +10,12 @@ function addSideStats(selector) {
 			'icon': 'CREATURES - CORE - HP.png',
 			'text': 'xdx+x'
 		},
-		'Armor': {'icon': 'CREATURES - CORE - AC.png'}
+		'Armor': {'icon': 'CREATURES - CORE - AC.png'},
+		'Speed': {'icon': 'CREATURES - CORE - SPEED.png'},
+		'Burrowing Speed': {'icon': 'CREATURES - CORE - BURROWING SPEED.png'},
+		'Climbing Speed': {'icon': 'CREATURES - CORE - CLIMBING SPEED.png'},
+		'Swim Speed': {'icon': 'CREATURES - CORE - SWIM SPEED.png'},
+		'Flying Speed': {'icon': 'CREATURES - CORE - FLYING SPEED.png'}
 	});
 	// statSelector(selector.find('.right-stat-wrapper', {}));
 }
