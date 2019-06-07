@@ -6,8 +6,11 @@ function addSideStats(selector) {
 	);
 
 	statSelector(selector.find('.left-stat-wrapper'), {
-		'Hit Points': 'CREATURES - CORE - HP.png',
-		'Armor': 'CREATURES - CORE - AC.png'
+		'Hit Points': {
+			'icon': 'CREATURES - CORE - HP.png',
+			'text': 'xdx+x'
+		},
+		'Armor': {'icon': 'CREATURES - CORE - AC.png'}
 	});
 	// statSelector(selector.find('.right-stat-wrapper', {}));
 }
@@ -34,7 +37,6 @@ function statSelector(selector, iconDict) {
 		iconlist = iconlist + '\
 			<div class="icon-select-' + iconKey + ' icon-select-icon-block">\
 				<p class="icon-select-title">' + iconKey + '</p>\
-				<img class="icon-select-icon" src="assets/' + iconDict[iconKey] + '" alt="' + iconKey + '">\
 			</div>\
 		';
 	});
@@ -79,7 +81,18 @@ function statSelector(selector, iconDict) {
 
 	// Add clickable functionality to the icons available.
 	selector.find('.stat-selector .iconlist .icon-select-icon-block').click(function() {
-		let iconhtml = $(this)[0].innerHTML;
+		let iconKey = $(this).find('p').text();
+
+		// Construct the icon areas.
+		let iconhtml = '\
+				<p class="icon-select-title">' + iconKey + '</p>\
+				<img class="icon-select-icon" src="assets/' + iconDict[iconKey]['icon'] + '" alt="' + iconKey + '">\
+				<p contenteditable="true" class="icon-select-val">00</p>\
+				';
+		if('text' in iconDict[iconKey]) {
+			iconhtml = iconhtml + '<p contenteditable="true" class="icon-select-detail-text">' + iconDict[iconKey]['text'] + '</p>'
+		}
+
 		selector.find('.stat-selector').before(
 			'<div class="icon-select-icon-block-active">\
 				<div class="remove-icon">\
