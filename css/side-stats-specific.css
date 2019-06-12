@@ -1,0 +1,124 @@
+/* HP styles. */
+.stat-wrapper .icon-display-hit-points {
+  margin-bottom: -19px;
+}
+.stat-wrapper .icon-display-hit-points .icon-select-title {
+  margin-bottom: -13px;
+}
+
+.stat-wrapper .icon-display-hit-points .icon-select-icon {
+  max-height: 130px;
+}
+
+.stat-wrapper .icon-display-hit-points .icon-select-val {
+  bottom: 53px;
+}
+
+.stat-wrapper .icon-display-hit-points .icon-select-detail-text {
+  bottom: 26px;
+}
+
+/* AC styles. */
+.stat-wrapper .icon-display-armor {
+  margin-bottom: -7px;
+}
+
+.stat-wrapper .icon-display-armor .icon-select-title {
+  margin-bottom: -13px;
+}
+
+.stat-wrapper .icon-display-armor .icon-select-icon {
+  max-height: 121px;
+}
+
+.stat-wrapper .icon-display-armor .icon-select-val {
+  bottom: 43px;
+}
+
+/* Speed styles. */
+.stat-wrapper .icon-display-speed {
+  margin-bottom: -21px;
+}
+
+.stat-wrapper .icon-display-speed .icon-select-title {
+  margin-bottom: -19px;
+}
+
+.stat-wrapper .icon-display-speed .icon-select-icon {
+  max-height: 127px;
+}
+
+.stat-wrapper .icon-display-speed .icon-select-val {
+  bottom: 43px;
+}
+
+/* Burrow styles. */
+.stat-wrapper .icon-display-burrow {
+  margin-bottom: -23px;
+}
+
+.stat-wrapper .icon-display-burrow .icon-select-title {
+  margin-bottom: -17px;
+}
+
+.stat-wrapper .icon-display-burrow .icon-select-icon {
+  max-height: 145px;
+  margin-right: -12px;
+}
+
+.stat-wrapper .icon-display-burrow .icon-select-val {
+  bottom: 67px;
+}
+
+/* Climb styles. */
+.stat-wrapper .icon-display-climb {
+  margin-bottom: -23px;
+}
+
+.stat-wrapper .icon-display-climb .icon-select-title {
+  margin-bottom: -17px;
+}
+
+.stat-wrapper .icon-display-climb .icon-select-icon {
+  max-height: 145px;
+  margin-right: -11px;
+}
+
+.stat-wrapper .icon-display-climb .icon-select-val {
+  bottom: 42px;
+}
+
+/* Swim styles. */
+.stat-wrapper .icon-display-swim {
+  margin-bottom: -23px;
+}
+
+.stat-wrapper .icon-display-swim .icon-select-title {
+  margin-bottom: -17px;
+}
+
+.stat-wrapper .icon-display-swim .icon-select-icon {
+  max-height: 145px;
+  margin-right: -12px;
+}
+
+.stat-wrapper .icon-display-swim .icon-select-val {
+  bottom: 67px;
+}
+
+/* Fly styles. */
+.stat-wrapper .icon-display-fly {
+  margin-bottom: -13px;
+}
+
+.stat-wrapper .icon-display-fly .icon-select-title {
+  margin-bottom: -27px;
+}
+
+.stat-wrapper .icon-display-fly .icon-select-icon {
+  max-height: 145px;
+}
+
+.stat-wrapper .icon-display-fly .icon-select-val {
+  bottom: 31px;
+}

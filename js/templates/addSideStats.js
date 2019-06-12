@@ -109,6 +109,18 @@ function statSelector(selector, iconDict) {
 		);
 		selector.find('.icon-select-icon-block-active .remove-icon').click(function() {
 			$(this).parent().remove();
+			checkIfNeedAdd(selector);
 		});
+		checkIfNeedAdd(selector);
 	});
+}
+
+function checkIfNeedAdd(selector) {
+	let newSel = selector.find('.stat-selector');
+
+	if(selector.children().length > 4) {
+		newSel.addClass('stat-selector-no-display');
+	} else {
+		newSel.removeClass('stat-selector-no-display');
+	}
 }
