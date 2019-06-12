@@ -82,7 +82,7 @@ function addCreature(selector) {
 	selector.find('.vertical-position').on('input', function() {
 		verticalCreatureImagePosition(selector, $(this).val());
 	});
-	selector.find('.slvertical-size-tooltip').on('input', function() {
+	selector.find('.slider-vertical-tooltip').on('input', function() {
 		verticalCreatureImagePosition(selector, $(this).val());
 	});
 }
