@@ -12,10 +12,10 @@ function addSideStats(selector) {
 		},
 		'Armor': {'icon': 'CREATURES - CORE - AC.png'},
 		'Speed': {'icon': 'CREATURES - CORE - SPEED.png'},
-		'Burrowing Speed': {'icon': 'CREATURES - CORE - BURROWING SPEED.png'},
-		'Climbing Speed': {'icon': 'CREATURES - CORE - CLIMBING SPEED.png'},
-		'Swim Speed': {'icon': 'CREATURES - CORE - SWIM SPEED.png'},
-		'Flying Speed': {'icon': 'CREATURES - CORE - FLYING SPEED.png'}
+		'Burrow': {'icon': 'CREATURES - CORE - BURROWING SPEED.png'},
+		'Climb': {'icon': 'CREATURES - CORE - CLIMBING SPEED.png'},
+		'Swim': {'icon': 'CREATURES - CORE - SWIM SPEED.png'},
+		'Fly': {'icon': 'CREATURES - CORE - FLYING SPEED.png'}
 	});
 	// statSelector(selector.find('.right-stat-wrapper', {}));
 }
@@ -87,6 +87,7 @@ function statSelector(selector, iconDict) {
 	// Add clickable functionality to the icons available.
 	selector.find('.stat-selector .iconlist .icon-select-icon-block').click(function() {
 		let iconKey = $(this).find('p').text();
+		let iconKeyClass = iconKey.replace(/\s+/g, '-').toLowerCase();
 
 		// Construct the icon areas.
 		let iconhtml = '\
@@ -99,7 +100,7 @@ function statSelector(selector, iconDict) {
 		}
 
 		selector.find('.stat-selector').before(
-			'<div class="icon-select-icon-block-active">\
+			'<div class="icon-select-icon-block-active icon-display-' + iconKeyClass + '">\
 				<div class="remove-icon">\
 					<i class="fas fa-minus"></i>\
 				</div>'
