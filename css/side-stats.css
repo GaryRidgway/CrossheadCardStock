@@ -33,6 +33,7 @@
     pointer-events: all;
     position: relative;
     margin-top: 15px;
+    cursor: pointer;
 }
 
 .stat-selector.stat-selector-no-display {
