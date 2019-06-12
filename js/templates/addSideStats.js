@@ -1,3 +1,4 @@
+// This function adds the left and right side stat wrappers and functionality.
 function addSideStats(selector) {
 	selector.append(
 		'<div class="left-stat-wrapper stat-wrapper"></div>\
@@ -5,6 +6,8 @@ function addSideStats(selector) {
 		'
 	);
 
+	// The statSelector() function takes a selector (left or right stat-wrapper)
+	// and an array of icons and their data.
 	statSelector(selector.find('.left-stat-wrapper'), {
 		'Hit Points': {
 			'icon': 'CREATURES - CORE - HP.png',
@@ -99,6 +102,7 @@ function statSelector(selector, iconDict) {
 			iconhtml = iconhtml + '<p contenteditable="true" class="icon-select-detail-text">' + iconDict[iconKey]['text'] + '</p>'
 		}
 
+		// Prepend the selected icon and it's fields.
 		selector.find('.stat-selector').before(
 			'<div class="icon-select-icon-block-active icon-display-' + iconKeyClass + '">\
 				<div class="remove-icon">\
@@ -109,12 +113,17 @@ function statSelector(selector, iconDict) {
 		);
 		selector.find('.icon-select-icon-block-active .remove-icon').click(function() {
 			$(this).parent().remove();
+
+			// Check if we need to keep the add button.
 			checkIfNeedAdd(selector);
 		});
+
+		// Check if we need to keep the add button.
 		checkIfNeedAdd(selector);
 	});
 }
 
+// This function checks if there is a need for a add button on the side stats.
 function checkIfNeedAdd(selector) {
 	let newSel = selector.find('.stat-selector');
 
