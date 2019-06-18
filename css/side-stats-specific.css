@@ -122,3 +122,44 @@
 .stat-wrapper .icon-display-fly .icon-select-val {
   bottom: 31px;
 }
+
+/* Action Specific Styles */
+/* One attack */
+.icon-select-icon-block-active.action.icon-display-attack-single {
+  margin-bottom: -85px;
+  margin-top: -20px;
+}
+
+.icon-select-icon-block-active.action.icon-display-attack-single .icon-select-val {
+    bottom: 78px;
+}
+
+/* Two Attacks */
+.icon-select-icon-block-active.action.icon-display-attack-double {
+    margin-top: -19px;
+}
+
+.icon-select-icon-block-active.action.icon-display-attack-double .icon-select-icon {
+}
+
+.icon-select-icon-block-active.action.icon-display-attack-single .icon-select-val {
+
+}
+
+/* Two Attacks */
+.icon-select-icon-block-active.action.icon-display-attack-triple {
+  margin-top: -4px;
+  margin-bottom: -54px;
+}
+
+.icon-select-icon-block-active.action.icon-display-attack-triple .icon-select-icon {
+}
+
+.icon-select-icon-block-active.action.icon-display-attack-triple .icon-select-val {
+
+}
+
+
+
+
+

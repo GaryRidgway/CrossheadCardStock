@@ -11,14 +11,64 @@ function addSideStats(selector) {
 	statSelector(selector.find('.left-stat-wrapper'), {
 		'Hit Points': {
 			'icon': 'CREATURES - CORE - HP.png',
-			'text': 'xdx+x'
+			'text': 'xdx+x',
+			'type': 'stat'
 		},
-		'Armor': {'icon': 'CREATURES - CORE - AC.png'},
-		'Speed': {'icon': 'CREATURES - CORE - SPEED.png'},
-		'Burrow': {'icon': 'CREATURES - CORE - BURROWING SPEED.png'},
-		'Climb': {'icon': 'CREATURES - CORE - CLIMBING SPEED.png'},
-		'Swim': {'icon': 'CREATURES - CORE - SWIM SPEED.png'},
-		'Fly': {'icon': 'CREATURES - CORE - FLYING SPEED.png'}
+		'Armor': {
+			'icon': 'CREATURES - CORE - AC.png',
+			'type': 'stat'
+		},
+		'Speed': {
+			'icon': 'CREATURES - CORE - SPEED.png',
+			'type': 'stat'
+		},
+		'Burrow': {
+			'icon': 'CREATURES - CORE - BURROWING SPEED.png',
+			'type': 'stat'
+		},
+		'Climb': {
+			'icon': 'CREATURES - CORE - CLIMBING SPEED.png',
+			'type': 'stat'
+		},
+		'Swim': {
+			'icon': 'CREATURES - CORE - SWIM SPEED.png',
+			'type': 'stat'
+		},
+		'Fly': {
+			'icon': 'CREATURES - CORE - FLYING SPEED.png',
+			'type': 'stat'
+		}
+	});
+
+	statSelector(selector.find('.right-stat-wrapper'), {
+		'Attack Single': {
+			'icon': 'CREATURES - ACTION - SINGLE ATTACK.png',
+			'type': 'action'
+		},
+		'Attack Double': {
+			'icon': 'CREATURES - ACTION - DOUBLE ATTACK.png',
+			'type': 'action'
+		},
+		'Attack Triple': {
+			'icon': 'CREATURES - ACTION - TRIPLE ATTACK.png',
+			'type': 'action'
+		},
+		'DMG Any': {
+			'icon': 'CREATURES - DAMAGE -.png',
+			'type': 'damage'
+		},
+		'DMG Bludgeoning': {
+			'icon': 'CREATURES - DAMAGE - BLUDGEONING.png',
+			'type': 'damage'
+		},
+		'DMG Piercing': {
+			'icon': 'CREATURES - DAMAGE - PIERCING.png',
+			'type': 'damage'
+		},
+		'DMG Slashing': {
+			'icon': 'CREATURES - DAMAGE - SLASHING.png',
+			'type': 'damage'
+		}
 	});
 	// statSelector(selector.find('.right-stat-wrapper', {}));
 }
@@ -93,18 +143,11 @@ function statSelector(selector, iconDict) {
 		let iconKeyClass = iconKey.replace(/\s+/g, '-').toLowerCase();
 
 		// Construct the icon areas.
-		let iconhtml = '\
-				<p class="icon-select-title">' + iconKey + '</p>\
-				<img class="icon-select-icon" src="assets/' + iconDict[iconKey]['icon'] + '" alt="' + iconKey + '">\
-				<p contenteditable="true" class="icon-select-val">00</p>\
-				';
-		if('text' in iconDict[iconKey]) {
-			iconhtml = iconhtml + '<p contenteditable="true" class="icon-select-detail-text">' + iconDict[iconKey]['text'] + '</p>'
-		}
+		let iconhtml = craftIconHTML(iconDict, iconKey);
 
 		// Prepend the selected icon and it's fields.
 		selector.find('.stat-selector').before(
-			'<div class="icon-select-icon-block-active icon-display-' + iconKeyClass + '">\
+			'<div class="icon-select-icon-block-active icon-display-' + iconKeyClass + ' ' + iconDict[iconKey]['type'] + '">\
 				<div class="remove-icon">\
 					<i class="fas fa-minus"></i>\
 				</div>'
@@ -121,6 +164,49 @@ function statSelector(selector, iconDict) {
 		// Check if we need to keep the add button.
 		checkIfNeedAdd(selector);
 	});
+}
+
+// Creaft HTML
+function craftIconHTML(iconDict, iconKey) {
+	let iconhtml;
+
+	switch (iconDict[iconKey]['type']) {
+
+		// If it is a stat.
+		case 'stat':
+			iconhtml = '\
+				<p class="icon-select-title">' + iconKey + '</p>\
+				<img class="icon-select-icon" src="assets/' + iconDict[iconKey]['icon'] + '" alt="' + iconKey + '">\
+				<p contenteditable="true" class="icon-select-val">00</p>\
+				';
+			if('text' in iconDict[iconKey]) {
+				iconhtml = iconhtml + '<p contenteditable="true" class="icon-select-detail-text">' + iconDict[iconKey]['text'] + '</p>'
+			}
+			break;
+
+		// If it is an action.
+		case 'action':
+			iconhtml = '\
+				<img class="icon-select-icon" src="assets/' + iconDict[iconKey]['icon'] + '" alt="' + iconKey + '">\
+				<p class="icon-select-val">action</p>\
+				';
+			break;
+
+		// If it is damage.
+		case 'damage':
+			iconhtml = '\
+				<img class="icon-select-icon" src="assets/' + iconDict[iconKey]['icon'] + '" alt="' + iconKey + '">\
+				<p contenteditable="true" class="icon-select-val">00</p>\
+				<p contenteditable="true" class="icon-select-title">atk</p>\
+				<div>\
+					<p contenteditable="true" class="icon-select-dmg avg">XX</p>\
+					<p contenteditable="true" class="icon-select-dmg rolled">xdx+x</p>\
+				</div>\
+				';
+			break;
+	}
+
+	return iconhtml;
 }
 
 // This function checks if there is a need for a add button on the side stats.

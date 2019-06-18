@@ -49,13 +49,15 @@
     display: flex;
     flex-direction: column;
     background-color: rgba(51, 51, 51, 0.5);
-    left: 150%;
     top: 20px;
     box-shadow: var(--m-s-3);
     border: var(--border-size) solid var(--stark-white-transparent);
     border-radius: 10px;
     z-index: 600;
 }
+
+.left-stat-wrapper .add-stat+.iconlist { left: 150%; }
+.right-stat-wrapper .add-stat+.iconlist { right: 150%; }
 
 .iconlist .icon-select-icon-block:hover .icon-select-title {
     padding-left: 15px;
@@ -168,7 +170,25 @@
     display: inline-block;
 }
 
+/* Styles for the actions. */
+.icon-select-icon-block-active.action {
+    margin-top: -32px;
+}
 
+.icon-select-icon-block-active.action .icon-select-icon {
+    max-height: 150px;
+}
+
+.icon-select-icon-block-active.action .icon-select-val {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 26px;
+    line-height: 26px;
+    border: var(--border-size) solid var(--black);
+    background-color: var(--white);
+    padding: 1px 2px 3px 4px;
+    position: relative;
+}
 
 
 
