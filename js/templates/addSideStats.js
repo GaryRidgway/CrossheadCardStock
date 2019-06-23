@@ -196,10 +196,10 @@ function craftIconHTML(iconDict, iconKey) {
 		case 'damage':
 			iconhtml = '\
 				<img class="icon-select-icon" src="assets/' + iconDict[iconKey]['icon'] + '" alt="' + iconKey + '">\
-				<p contenteditable="true" class="icon-select-val">00</p>\
+				<p contenteditable="true" class="icon-select-val">+0</p>\
 				<p contenteditable="true" class="icon-select-title">atk</p>\
-				<div>\
-					<p contenteditable="true" class="icon-select-dmg avg">XX</p>\
+				<div class="avg-rolled-container">\
+					<p contenteditable="true" class="icon-select-dmg avg">X</p>\
 					<p contenteditable="true" class="icon-select-dmg rolled">xdx+x</p>\
 				</div>\
 				';

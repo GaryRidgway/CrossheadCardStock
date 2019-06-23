@@ -1,0 +1,6 @@
+.measure-line {
+	position: relative;
+	width: 100%;
+	height: var(--border-size);
+	background-color: #000;
+}

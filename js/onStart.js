@@ -6,7 +6,7 @@ $( document ).ready(function() {
     $('img').on('dragstart', function(event) { event.preventDefault(); });
 
     // Shrink em a bit.
-    cardScale(0.8);
+    cardScale(1);
 
     // Auto load if given argument.
     autoLoad();

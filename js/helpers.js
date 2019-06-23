@@ -1,3 +1,5 @@
+var debug = true;
+
 // Can get the variables from the URL.
 function getURLVars() {
     var vars = {};
@@ -64,4 +66,15 @@ function verticalCreatureImagePosition(selector, modifier) {
   selector.find('.vertical-position').val(modifier);
   selector.find('.slider-vertical-tooltip').val(modifier);
   selector.find('.creature-vertical-container').css( "transform", 'translateY(' + modifier * -3 + 'px)');
+}
+
+// Add lines to measure items against in side stats.
+function measures() {
+	if (debug) {
+
+		let html = '<div class="measure-line"></div>';
+		$('.left-stat-wrapper').prepend(html);
+		$('.left-stat-wrapper .stat-selector').before(html);
+
+	}
 }
