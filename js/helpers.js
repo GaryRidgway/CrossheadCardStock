@@ -17,7 +17,7 @@ function cardScale(percentSize) {
 		let newMinHeight = parseFloat($(this).css('min-height')) * percentSize;
 		let newHeight    = parseFloat($(this).css('height')) * percentSize;
 		$(this).css({
-	      	"width": newWidth + "px",
+	      "width": newWidth + "px",
 		    "min-height": newMinHeight + "px",
 		    "height": newHeight + "px"
 	    });
@@ -26,7 +26,7 @@ function cardScale(percentSize) {
 
 		// Add the transform on inner container.
 		$(this).find('.card-inner').css({
-	      	"-webkit-transform": "scale(" + percentSize + ")",
+	      "-webkit-transform": "scale(" + percentSize + ")",
 		    "-moz-transform": "scale(" + percentSize + ")",
 		    "-o-transform": "scale(" + percentSize + ")",
 		    "transform": "scale(" + percentSize + ")",
@@ -71,10 +71,8 @@ function verticalCreatureImagePosition(selector, modifier) {
 // Add lines to measure items against in side stats.
 function measures() {
 	if (debug) {
-
 		let html = '<div class="measure-line"></div>';
 		$('.left-stat-wrapper').prepend(html);
 		$('.left-stat-wrapper .stat-selector').before(html);
-
 	}
 }
