@@ -165,7 +165,7 @@ function statSelector(selector, iconDict) {
 	});
 }
 
-// Creaft HTML
+// Craft HTML
 function craftIconHTML(iconDict, iconKey) {
 	let iconhtml;
 	let icon = '<img class="icon-select-icon" src="assets/' + iconDict[iconKey]['icon'] + '" alt="' + iconKey + '">';
