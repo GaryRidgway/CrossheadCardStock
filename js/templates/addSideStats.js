@@ -11,7 +11,6 @@ function addSideStats(selector) {
 	statSelector(selector.find('.left-stat-wrapper'), {
 		'Hit Points': {
 			'icon': 'CREATURES - CORE - HP.png',
-			'text': 'xdx+x',
 			'type': 'stat'
 		},
 		'Armor': {
@@ -169,25 +168,22 @@ function statSelector(selector, iconDict) {
 // Creaft HTML
 function craftIconHTML(iconDict, iconKey) {
 	let iconhtml;
+	let icon = '<img class="icon-select-icon" src="assets/' + iconDict[iconKey]['icon'] + '" alt="' + iconKey + '">';
 
 	switch (iconDict[iconKey]['type']) {
-
 		// If it is a stat.
 		case 'stat':
 			iconhtml = '\
 				<p class="icon-select-title">' + iconKey + '</p>\
-				<img class="icon-select-icon" src="assets/' + iconDict[iconKey]['icon'] + '" alt="' + iconKey + '">\
+				' + icon + '\
 				<p contenteditable="true" class="icon-select-val">00</p>\
 				';
-			if('text' in iconDict[iconKey]) {
-				iconhtml = iconhtml + '<p contenteditable="true" class="icon-select-detail-text">' + iconDict[iconKey]['text'] + '</p>'
-			}
 			break;
 
 		// If it is an action.
 		case 'action':
 			iconhtml = '\
-				<img class="icon-select-icon" src="assets/' + iconDict[iconKey]['icon'] + '" alt="' + iconKey + '">\
+				' + icon + '\
 				<p class="icon-select-val">action</p>\
 				';
 			break;
@@ -195,7 +191,7 @@ function craftIconHTML(iconDict, iconKey) {
 		// If it is damage.
 		case 'damage':
 			iconhtml = '\
-				<img class="icon-select-icon" src="assets/' + iconDict[iconKey]['icon'] + '" alt="' + iconKey + '">\
+				' + icon + '\
 				<p contenteditable="true" class="icon-select-val">+0</p>\
 				<p contenteditable="true" class="icon-select-title">atk</p>\
 				<div class="avg-rolled-container">\

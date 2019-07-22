@@ -144,21 +144,6 @@
     width: auto;
 }
 
-.icon-select-icon-block-active .icon-select-detail-text {
-    background-color: var(--white);
-    font-family: 'Oswald', sans-serif;
-    font-weight: 600;
-    color: var(--black);
-    font-size: 17px;
-    line-height: 16px;
-    margin: 0;
-    position: absolute;
-    bottom: 20px;
-    padding: 2px;
-    letter-spacing: 2;
-    border: 3px solid var(--black);
-}
-
 .icon-select-icon-block-active .icon-select-val {
     font-family: 'Oswald', sans-serif;
     font-size: 50px;
