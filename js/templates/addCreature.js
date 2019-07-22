@@ -30,7 +30,7 @@ function addCreature(selector) {
 					<div class="bottom-slider vertical">\
 						<div class="slider-header vertical-position-header">\
 							<div class="slider-title vertical-position-title">Vertical</div>\
-							<input type="number" class="slider-tooltip slider-vertical-tooltip" min="0" max="200" value="100">\
+							<input type="number" class="slider-tooltip slider-vertical-tooltip" min="-100" max="100" value="100">\
 						</div>\
 					  	<input type="range" min="-100" max="100" value="0" class="slider vertical-position">\
 					</div>\
