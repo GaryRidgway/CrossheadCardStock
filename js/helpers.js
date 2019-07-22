@@ -76,3 +76,43 @@ function measures() {
 		$('.left-stat-wrapper .stat-selector').before(html);
 	}
 }
+
+// Craft Icon HTML
+function craftIconHTML(iconDict, iconKey) {
+  let iconhtml;
+  let icon = '<img class="icon-select-icon" src="assets/' + iconDict[iconKey]['icon'] + '" alt="' + iconKey + '">';
+
+  switch (iconDict[iconKey]['type']) {
+    // If it is a stat.
+    case 'stat':
+      iconhtml = '\
+        <p class="icon-select-title">' + iconKey + '</p>\
+        ' + icon + '\
+        <p contenteditable="true" class="icon-select-val">00</p>\
+        ';
+      break;
+
+    // If it is an action.
+    case 'action':
+      iconhtml = '\
+        ' + icon + '\
+        <p class="icon-select-val">action</p>\
+        ';
+      break;
+
+    // If it is damage.
+    case 'damage':
+      iconhtml = '\
+        ' + icon + '\
+        <p contenteditable="true" class="icon-select-val">+0</p>\
+        <p contenteditable="true" class="icon-select-title">atk</p>\
+        <div class="avg-rolled-container">\
+          <p contenteditable="true" class="icon-select-dmg avg">X</p>\
+          <p contenteditable="true" class="icon-select-dmg rolled">xdx+x</p>\
+        </div>\
+        ';
+      break;
+  }
+
+  return iconhtml;
+}
