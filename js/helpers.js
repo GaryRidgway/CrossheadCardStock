@@ -78,7 +78,7 @@ function measures() {
 }
 
 // Craft Icon HTML
-function craftIconHTML(iconDict, iconKey) {
+function craftIconHTML(iconDict, iconKey, Load = false) {
   let iconhtml;
   let icon = '<img class="icon-select-icon" src="assets/' + iconDict[iconKey]['icon'] + '" alt="' + iconKey + '">';
 
@@ -88,7 +88,7 @@ function craftIconHTML(iconDict, iconKey) {
       iconhtml = '\
         <p class="icon-select-title">' + iconKey + '</p>\
         ' + icon + '\
-        <p contenteditable="true" class="icon-select-val">00</p>\
+        <p contenteditable="true" class="icon-select-val">' + ((Load) ? iconDict[iconKey]['val'] : '00') + '</p>\
         ';
       break;
 
@@ -115,4 +115,9 @@ function craftIconHTML(iconDict, iconKey) {
   }
 
   return iconhtml;
+}
+
+function loadLeftSideStats(selector) {
+  let finalLeftSideStats;
+  return finalLeftSideStats;
 }
