@@ -142,12 +142,11 @@ function statSelector(selector, iconDict) {
 		let iconKeyClass = iconKey.replace(/\s+/g, '-').toLowerCase();
 
 		// Construct the icon areas.
-		console.log(iconKey);
-		let iconhtml = craftIconHTML(iconDict, iconKey, true);
+		let iconhtml = craftIconHTML(iconDict, iconKey, false);
 
 		// Prepend the selected icon and it's fields.
 		selector.find('.stat-selector').before(
-			'<div class="icon-select-icon-block-active icon-display-' + iconKeyClass + ' ' + iconDict[iconKey]['type'] + '">\
+			'<div class="icon-select-icon-block-active icon-display-' + iconKeyClass + ' ' + iconDict[iconKey]['type'] + '" icon-type=' + iconDict[iconKey]['type'] + '">\
 				<div class="remove-icon">\
 					<i class="fas fa-minus"></i>\
 				</div>'

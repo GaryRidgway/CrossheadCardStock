@@ -118,6 +118,13 @@ function craftIconHTML(iconDict, iconKey, Load = false) {
 }
 
 function loadLeftSideStats(selector) {
-  let finalLeftSideStats;
+  let finalLeftSideStats = {};
+  $('.left-stat-wrapper .icon-select-icon-block-active').each(function(index) {
+    finalLeftSideStats[$(this).find('.icon-select-title').text()] = {
+      'icon' : $('.icon-select-icon').attr('src').replace('assets/',''),
+      'type' : $(this).attr('icon-type')
+    };
+  });
+  console.log(finalLeftSideStats);
   return finalLeftSideStats;
 }
