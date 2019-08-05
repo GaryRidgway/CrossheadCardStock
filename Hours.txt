@@ -1,5 +1,5 @@
-hours actually tracked = 5.
+hours actually tracked = 6
 
-Aug/04/2019 = 2.5
+Aug/04/2019 = 3.5
 
 I have yet to estimate hours prior to July 22, 2019.
