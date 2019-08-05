@@ -15,7 +15,7 @@ function saveState() {
 		let horiz = $(this).find('.horizontal-position').val();
 		let size = $(this).find('.size-position').val();
 		let vert = $(this).find('.vertical-position').val();
-		let leftStats = loadLeftSideStats($(this));
+		let sideStats = loadSideStats($(this));
 
 		var dict = {
 			name: name,
@@ -29,7 +29,7 @@ function saveState() {
 			horiz: horiz,
 			size: size,
 			vert: vert,
-			leftStats: leftStats,
+			sideStats: sideStats,
 		};
 
 		savedContent[cardid] = dict;

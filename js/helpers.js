@@ -140,20 +140,26 @@ function insertIconHTML(selector, iconHTML, iconKeyClass, iconDict, iconKey) {
 
 // Returns a dictionary of the left side stats.
 //TODO: expand this to work for both sides.
-function loadLeftSideStats(selector) {
-  let finalLeftSideStats = {};
+function loadSideStats(selector) {
+  let finalSideStats = {};
+  $('.stat-wrapper').each(function() {
+    let LorRclass = $(this)[0].classList[0];
+    finalSideStats[LorRclass] = {};
 
-  selector.find('.left-stat-wrapper .icon-select-icon-block-active').each(function(index) {
-
-    
-    finalLeftSideStats[index] = {
-      [$(this).find('.icon-select-title').text()] : {
-        'icon' : $(this).find('.icon-select-icon').attr('src').replace('assets/',''),
-        'type' : $(this).attr('icon-type'),
-        'val'  : $(this).find('.icon-select-val').text()
-      }
-    };
+    selector.find($('.' + LorRclass)).find('.icon-select-icon-block-active').each(function(index) {
+      
+      finalSideStats[LorRclass][index] = {
+        [$(this).find('.icon-select-title').text()] : {
+          'icon' : $(this).find('.icon-select-icon').attr('src').replace('assets/',''),
+          'type' : $(this).attr('icon-type'),
+          'val'  : $(this).find('.icon-select-val').text()
+        }
+      };
+    });
   });
 
-  return finalLeftSideStats;
+
+  return finalSideStats;
 }
+
+function clog(any) {console.log(any);}

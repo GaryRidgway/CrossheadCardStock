@@ -61,14 +61,19 @@ function placeData(data, cardid) {
 
 	testData = cardDict;
 
-	// Left Side Stats.
-	for (var index in Object.keys(cardDict['leftStats'])) {
-		let iconDict = cardDict['leftStats'][index];
-		let iconKey = Object.keys(iconDict)[0];
-		// console.log(iconKey);
-		let iconKeyClass = iconKey.replace(/\s+/g, '-').toLowerCase();
-		let iconHTML = craftIconHTML(iconDict,iconKey,true);
-		let selector = $('.left-stat-wrapper');
-		insertIconHTML(selector, iconHTML, iconKeyClass, iconDict, iconKey);
+	// Side Stats.
+	let sideStats = cardDict['sideStats'];
+	for(i = 0; i < Object.keys(sideStats).length; i++) {
+		let side = Object.keys(sideStats)[i];
+		let sideDict = sideStats[side];
+		for (var index in Object.keys(sideDict)) {
+			let iconDict = sideDict[index];
+			let iconKey = Object.keys(iconDict)[0];
+			let iconKeyClass = iconKey.replace(/\s+/g, '-').toLowerCase();
+			let iconHTML = craftIconHTML(iconDict,iconKey,true);
+			let selector = $('.' + side);
+			insertIconHTML(selector, iconHTML, iconKeyClass, iconDict, iconKey);
+		}
 	}
+	
 }
