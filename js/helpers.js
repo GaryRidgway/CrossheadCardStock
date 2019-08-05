@@ -79,13 +79,13 @@ function measures() {
 
 // Craft Icon HTML
 function craftIconHTML(iconDict, iconKey, Load = false) {
-  let iconhtml;
+  let iconHTML;
   let icon = '<img class="icon-select-icon" src="assets/' + iconDict[iconKey]['icon'] + '" alt="' + iconKey + '">';
 
   switch (iconDict[iconKey]['type']) {
     // If it is a stat.
     case 'stat':
-      iconhtml = '\
+      iconHTML = '\
         <p class="icon-select-title">' + iconKey + '</p>\
         ' + icon + '\
         <p contenteditable="true" class="icon-select-val">' + ((Load) ? iconDict[iconKey]['val'] : '00') + '</p>\
@@ -94,7 +94,7 @@ function craftIconHTML(iconDict, iconKey, Load = false) {
 
     // If it is an action.
     case 'action':
-      iconhtml = '\
+      iconHTML = '\
         ' + icon + '\
         <p class="icon-select-val">action</p>\
         ';
@@ -102,7 +102,7 @@ function craftIconHTML(iconDict, iconKey, Load = false) {
 
     // If it is damage.
     case 'damage':
-      iconhtml = '\
+      iconHTML = '\
         ' + icon + '\
         <p contenteditable="true" class="icon-select-val">+0</p>\
         <p contenteditable="true" class="icon-select-title">atk</p>\
@@ -114,17 +114,46 @@ function craftIconHTML(iconDict, iconKey, Load = false) {
       break;
   }
 
-  return iconhtml;
+  return iconHTML;
 }
 
+function insertIconHTML(selector, iconHTML, iconKeyClass, iconDict, iconKey) {
+  // Prepend the selected icon and it's fields.
+  selector.find('.stat-selector').before(
+    '<div class="icon-select-icon-block-active icon-display-' + iconKeyClass + ' ' + iconDict[iconKey]['type'] + '" icon-type="' + iconDict[iconKey]['type'] + '">\
+      <div class="remove-icon">\
+        <i class="fas fa-minus"></i>\
+      </div>'
+      + iconHTML +
+    '</div>'
+  );
+  selector.find('.icon-select-icon-block-active .remove-icon').click(function() {
+    $(this).parent().remove();
+
+    // Check if we need to keep the add button.
+    checkIfNeedAdd(selector);
+  });
+
+  // Check if we need to keep the add button.
+  checkIfNeedAdd(selector);
+}
+
+// Returns a dictionary of the left side stats.
+//TODO: expand this to work for both sides.
 function loadLeftSideStats(selector) {
   let finalLeftSideStats = {};
-  $('.left-stat-wrapper .icon-select-icon-block-active').each(function(index) {
-    finalLeftSideStats[$(this).find('.icon-select-title').text()] = {
-      'icon' : $('.icon-select-icon').attr('src').replace('assets/',''),
-      'type' : $(this).attr('icon-type')
+
+  selector.find('.left-stat-wrapper .icon-select-icon-block-active').each(function(index) {
+
+    
+    finalLeftSideStats[index] = {
+      [$(this).find('.icon-select-title').text()] : {
+        'icon' : $(this).find('.icon-select-icon').attr('src').replace('assets/',''),
+        'type' : $(this).attr('icon-type'),
+        'val'  : $(this).find('.icon-select-val').text()
+      }
     };
   });
-  console.log(finalLeftSideStats);
+
   return finalLeftSideStats;
 }

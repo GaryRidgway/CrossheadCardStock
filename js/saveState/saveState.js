@@ -12,9 +12,10 @@ function saveState() {
 		let profs  = $(this).find('.creature-proficiencies-text').text();
 		let wysiwyg = quill.getContents();
 		let creRot = $(this).find('.rotate-creature').roundSlider("option", "value");
-    let horiz = $(this).find('.horizontal-position').val();
-    let size = $(this).find('.size-position').val();
-    let vert = $(this).find('.vertical-position').val();
+		let horiz = $(this).find('.horizontal-position').val();
+		let size = $(this).find('.size-position').val();
+		let vert = $(this).find('.vertical-position').val();
+		let leftStats = loadLeftSideStats($(this));
 
 		var dict = {
 			name: name,
@@ -25,9 +26,10 @@ function saveState() {
 			profs: profs,
 			wysiwyg: wysiwyg,
 			creRot: creRot,
-      horiz: horiz,
-      size: size,
-      vert: vert
+			horiz: horiz,
+			size: size,
+			vert: vert,
+			leftStats: leftStats,
 		};
 
 		savedContent[cardid] = dict;

@@ -142,26 +142,10 @@ function statSelector(selector, iconDict) {
 		let iconKeyClass = iconKey.replace(/\s+/g, '-').toLowerCase();
 
 		// Construct the icon areas.
-		let iconhtml = craftIconHTML(iconDict, iconKey, false);
+		let iconHTML = craftIconHTML(iconDict, iconKey, false);
 
-		// Prepend the selected icon and it's fields.
-		selector.find('.stat-selector').before(
-			'<div class="icon-select-icon-block-active icon-display-' + iconKeyClass + ' ' + iconDict[iconKey]['type'] + '" icon-type=' + iconDict[iconKey]['type'] + '">\
-				<div class="remove-icon">\
-					<i class="fas fa-minus"></i>\
-				</div>'
-				+ iconhtml +
-			'</div>'
-		);
-		selector.find('.icon-select-icon-block-active .remove-icon').click(function() {
-			$(this).parent().remove();
-
-			// Check if we need to keep the add button.
-			checkIfNeedAdd(selector);
-		});
-
-		// Check if we need to keep the add button.
-		checkIfNeedAdd(selector);
+		// Insert the icon in to the proper area with container HTML.
+		insertIconHTML(selector, iconHTML, iconKeyClass, iconDict, iconKey)
 	});
 }
 

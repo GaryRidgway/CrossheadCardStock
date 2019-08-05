@@ -1,3 +1,6 @@
+var testData;
+
+
 function loadSaveState(data = 'CrossheadCardStockData') {
 	if (data == 'CrossheadCardStockData') {
 		try {
@@ -35,23 +38,37 @@ function autoLoad() {
 
 // Place the data where it needs to be.
 function placeData(data, cardid) {
+	let cardDict = data[cardid];
 	let cardselector = $(".card[cardid='" + cardid +"']");
-	cardselector.find('.name-text').html(data[cardid].name);
-	cardselector.find('.creature-specs').html(data[cardid].specs);
+	cardselector.find('.name-text').html(cardDict.name);
+	cardselector.find('.creature-specs').html(cardDict.specs);
 	cardselector.find('.outer-stat-box').each(function( index ) {
-		$(this).find('.stat-box-title p').html(data[cardid].stats[index][0]);
-		$(this).find('.inner-stat-box p').html(data[cardid].stats[index][1]);
+		$(this).find('.stat-box-title p').html(cardDict.stats[index][0]);
+		$(this).find('.inner-stat-box p').html(cardDict.stats[index][1]);
 	});
-	cardselector.find('.cr-left .cr-card-text').html(data[cardid].leftCR);
-	cardselector.find('.cr-right .cr-card-text').html(data[cardid].rightCR);
-	cardselector.find('.creature-proficiencies-text').html(data[cardid].profs);
-	quill.setContents(data[cardid].wysiwyg);
-	cardselector.find('.rotate-creature').roundSlider("option", "value", data[cardid].creRot);
-	rotateCreatureImage(cardselector, data[cardid].creRot);
-	cardselector.find('.horizontal-position').val(data[cardid].horiz);
-	horzontalCreatureImagePosition(cardselector, data[cardid].horiz);
-	cardselector.find('.size-position').val(data[cardid].size);
-	sizeCreatureImage(cardselector, data[cardid].size);
-	cardselector.find('.vertical-position').val(data[cardid].vert);
-	verticalCreatureImagePosition(cardselector, data[cardid].vert);
+	cardselector.find('.cr-left .cr-card-text').html(cardDict.leftCR);
+	cardselector.find('.cr-right .cr-card-text').html(cardDict.rightCR);
+	cardselector.find('.creature-proficiencies-text').html(cardDict.profs);
+	quill.setContents(cardDict.wysiwyg);
+	cardselector.find('.rotate-creature').roundSlider("option", "value", cardDict.creRot);
+	rotateCreatureImage(cardselector, cardDict.creRot);
+	cardselector.find('.horizontal-position').val(cardDict.horiz);
+	horzontalCreatureImagePosition(cardselector, cardDict.horiz);
+	cardselector.find('.size-position').val(cardDict.size);
+	sizeCreatureImage(cardselector, cardDict.size);
+	cardselector.find('.vertical-position').val(cardDict.vert);
+	verticalCreatureImagePosition(cardselector, cardDict.vert);
+
+	testData = cardDict;
+
+	// Left Side Stats.
+	for (var index in Object.keys(cardDict['leftStats'])) {
+		let iconDict = cardDict['leftStats'][index];
+		let iconKey = Object.keys(iconDict)[0];
+		// console.log(iconKey);
+		let iconKeyClass = iconKey.replace(/\s+/g, '-').toLowerCase();
+		let iconHTML = craftIconHTML(iconDict,iconKey,true);
+		let selector = $('.left-stat-wrapper');
+		insertIconHTML(selector, iconHTML, iconKeyClass, iconDict, iconKey);
+	}
 }
