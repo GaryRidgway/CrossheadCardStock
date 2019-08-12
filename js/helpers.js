@@ -104,11 +104,11 @@ function craftIconHTML(iconDict, iconKey, Load = false) {
     case 'damage':
       iconHTML = '\
         ' + icon + '\
-        <p contenteditable="true" class="icon-select-val">+0</p>\
+        <p contenteditable="true" class="icon-select-val">' + ((Load) ? iconDict[iconKey]['val'] : '+0') + '</p>\
         <p contenteditable="true" class="icon-select-title">atk</p>\
         <div class="avg-rolled-container">\
-          <p contenteditable="true" class="icon-select-dmg avg">X</p>\
-          <p contenteditable="true" class="icon-select-dmg rolled">xdx+x</p>\
+          <p contenteditable="true" class="icon-select-dmg avg">' + ((Load) ? iconDict[iconKey]['avgDMG'] : 'X') + '</p>\
+          <p contenteditable="true" class="icon-select-dmg rolled">' + ((Load) ? iconDict[iconKey]['rolledDMG'] : 'xdx+x') + '</p>\
         </div>\
         ';
       break;
@@ -159,18 +159,26 @@ function loadSideStats(selector) {
     // For the class, find the icons...
     selector.find($('.' + LorRclass)).find('.icon-select-icon-block-active').each(function(index) {
       
+      // Try and get the avg DMG and rolled DMG of damage icons.
+      let avgDMG    = $(this).find('.icon-select-dmg.avg').text();
+      let rolledDMG = $(this).find('.icon-select-dmg.rolled').text();
+      clog([$(this)[0].classList, avgDMG, rolledDMG]);
+
       // And add each icon to the dictionary with ordering.
       finalSideStats[LorRclass][index] = {
         [$(this).find('.icon-select-title').text()] : {
           'icon'    : $(this).find('.icon-select-icon').attr('src').replace('assets/',''),
           'type'    : $(this).attr('icon-type'),
           'val'     : $(this).find('.icon-select-val').text(),
-          'classes' : $(this)[0].classList.value
+          'classes' : $(this)[0].classList.value,
+          'avgDMG'  : ((avgDMG.length > 0) ? avgDMG : ''),
+          'rolledDMG'  : ((rolledDMG.length > 0) ? rolledDMG : ''),
         }
       };
     });
   });
 
+  clog(finalSideStats);
   return finalSideStats;
 }
 
