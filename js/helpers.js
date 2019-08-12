@@ -119,8 +119,14 @@ function craftIconHTML(iconDict, iconKey, Load = false) {
 
 function insertIconHTML(selector, iconHTML, iconKeyClass, iconDict, iconKey) {
   // Prepend the selected icon and it's fields.
+  let extraClasses = (('classes' in iconDict[iconKey] && (typeof iconDict[iconKey]['classes']) === 'string') ? iconDict[iconKey]['classes'] : '');
+  let topLevelClasses = 'icon-select-icon-block-active icon-display-' + iconKeyClass + ' ' + iconDict[iconKey]['type'];
+
+  // Condense the classes to be sure there is no overlap.
+  let condensedClasses = condenseClasses(extraClasses, topLevelClasses);
+
   selector.find('.stat-selector').before(
-    '<div class="icon-select-icon-block-active icon-display-' + iconKeyClass + ' ' + iconDict[iconKey]['type'] + '" icon-type="' + iconDict[iconKey]['type'] + '">\
+    '<div class="' + condensedClasses + '" icon-type="' + iconDict[iconKey]['type'] + '">\
       <div class="remove-icon">\
         <i class="fas fa-minus"></i>\
       </div>'
@@ -141,25 +147,41 @@ function insertIconHTML(selector, iconHTML, iconKeyClass, iconDict, iconKey) {
 // Returns a dictionary of the left side stats.
 //TODO: expand this to work for both sides.
 function loadSideStats(selector) {
+
   let finalSideStats = {};
   $('.stat-wrapper').each(function() {
+    // grab both the classes of left and right stat wrappers.
     let LorRclass = $(this)[0].classList[0];
+
+    // Add those to the final stats.
     finalSideStats[LorRclass] = {};
 
+    // For the class, find the icons...
     selector.find($('.' + LorRclass)).find('.icon-select-icon-block-active').each(function(index) {
       
+      // And add each icon to the dictionary with ordering.
       finalSideStats[LorRclass][index] = {
         [$(this).find('.icon-select-title').text()] : {
-          'icon' : $(this).find('.icon-select-icon').attr('src').replace('assets/',''),
-          'type' : $(this).attr('icon-type'),
-          'val'  : $(this).find('.icon-select-val').text()
+          'icon'    : $(this).find('.icon-select-icon').attr('src').replace('assets/',''),
+          'type'    : $(this).attr('icon-type'),
+          'val'     : $(this).find('.icon-select-val').text(),
+          'classes' : $(this)[0].classList.value
         }
       };
     });
   });
 
-
   return finalSideStats;
 }
 
+// Shortened console.log.
 function clog(any) {console.log(any);}
+
+// Take two strings of classes and return a condensed string with repeated classes removed.
+function condenseClasses(string1, string2) {
+  let classes = (string1 + ' ' + string2).split(' ').filter(function(allItems,i,a){
+      return i==a.indexOf(allItems);
+  }).join(' ');
+
+  return classes;
+}
