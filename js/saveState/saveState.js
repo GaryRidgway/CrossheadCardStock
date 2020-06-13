@@ -32,6 +32,7 @@ function saveState() {
 			sideStats: sideStats,
 		};
 
+//TODO: this is in the wrong bracket.
 		savedContent[cardid] = dict;
 
 		localStorage.setItem('CrossheadCardStockData', JSON.stringify(savedContent));
