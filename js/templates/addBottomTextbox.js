@@ -2,10 +2,7 @@ var quill;
 
 function addBottomTextbox(selector) {
 	selector.append(
-		'<div class="creature-proficiencies">\
-			<p class="creature-proficiencies-text" spellcheck="false" contenteditable="true"">proficiencies</p>\
-		</div>\
-		<div class="card-bottom-wysiwyg-wrapper">\
+		'<div class="card-bottom-wysiwyg-wrapper">\
 			<div class="card-bottom-wysiwyg">\
 				<p>Enter some text here...</p>\
 			</div>\
